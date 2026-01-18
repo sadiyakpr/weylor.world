@@ -1,0 +1,213 @@
+/* ROOT */
+.loginsignup {
+  width: 100%;
+  min-height: 100vh;
+  background-color: #292424;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 16px;
+  font-family: 'Quicksand' !important;
+}
+
+/* CONTAINER */
+.loginsignup-container {
+  width: 580px;
+  max-width: 100%;
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 40px 60px;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.12);
+  animation: fadeUp 0.6s ease;
+    font-family: 'Quicksand' !important;
+
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.loginsignup-container h1 {
+  font-size: 42px;
+  font-weight: 100;
+  color: #2c2c2c;
+  margin-bottom: 12px;
+  font-family: 'Abril Fatface';
+  text-align: center;
+}
+
+/* INPUTS */
+.loginsignup-fields {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.loginsignup-fields input {
+  height: 52px;
+  width: 100%;
+  padding: 0 18px;
+  border-radius: 8px;
+  border: 1px solid #d6d6d6;
+  outline: none;
+  color: #333;
+  font-size: 16px;
+  transition: all 0.25s ease;
+}
+
+.loginsignup-fields input::placeholder {
+  color: #9a9a9a;
+    font-family: 'Quicksand' !important;
+    font-weight: 500;
+
+}
+
+.loginsignup-fields input:focus {
+  border-color: #c77dff;
+  box-shadow: 0 0 0 3px rgba(199, 125, 255, 0.18);
+}
+
+/* BUTTON */
+.loginsignup-container button {
+  display: block;
+  width: 50%;
+  height: 52px;
+
+  margin: 35px auto; /* 👈 centers horizontally */
+
+  border: none;
+  border-radius: 50px;
+
+  font-size: 20px;
+  font-weight: 500;
+  font-family: 'Quicksand';
+
+  background-color: #A8B84A;
+  color: #FAF7F6;
+
+  cursor: pointer;
+  overflow: hidden;
+
+  transition: transform 0.3s ease;
+}
+
+.loginsignup-container button:hover {
+  transform: translateY(-6px);
+}
+
+/* Disabled button */
+.loginsignup-container button.disabled,
+.loginsignup-container button:disabled {
+  background: #cfcfcf;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+/* LOGIN TEXT */
+.loginsignup-login {
+  margin-top: 26px;
+  text-align: center;
+  font-size: 15px;
+  color: #5c5c5c;
+}
+
+.loginsignup-login span {
+  color: #9d4edd;
+  font-weight: 500;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.loginsignup-login span:hover {
+  color: #7b2cbf;
+}
+
+/* AGREEMENT */
+.loginsignup-agree {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-top: 22px;
+  font-size: 14px;
+  color: #6a6a6a;
+}
+
+.loginsignup-agree input {
+  margin-top: 3px;
+  accent-color: #9d4edd;
+}
+
+/* Error message styling */
+.error-text {
+  background-color: #ffe5e5;   /* soft red background */
+  color: #d8000c;              /* strong red text */
+  border: 1px solid #d8000c;   /* red border */
+  padding: 10px 14px;
+  border-radius: 6px;
+  margin-bottom: 15px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  text-align: center;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+/* Subtle fade-in animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Optional: differentiate login vs signup errors */
+.loginsignup-container.Login .error-text {
+  background-color: #fff0f0;
+}
+
+.loginsignup-container.SignUp .error-text {
+  background-color: #fff5e5;
+}
+
+/* ------------------- RESPONSIVE ------------------- */
+
+/* Small screens (phones) */
+@media (max-width: 480px) {
+  .loginsignup-container {
+    padding: 32px 22px;
+  }
+
+  .loginsignup-container h1 {
+    font-size: 26px;
+  }
+
+  .loginsignup-container button {
+    font-size: 16px;
+  }
+}
+
+/* Medium screens (tablets) */
+@media (max-width: 768px) {
+  .loginsignup-container {
+    width: 90%;
+    padding: 36px 32px;
+  }
+}
+
+/* Large screens */
+@media (min-width: 1024px) {
+  .loginsignup-container {
+    width: 580px;
+  }
+}
+
+/* Extra Large screens */
+@media (min-width: 1280px) {
+  .loginsignup-container {
+    transform: scale(1.02);
+  }
+}

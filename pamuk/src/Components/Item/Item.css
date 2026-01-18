@@ -1,0 +1,108 @@
+/* Base card */
+.item {
+  flex: 1 1 220px;
+  max-width: 280px;
+  margin: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.25s ease;
+}
+
+.item:hover {
+  transform: translateY(-4px);
+}
+
+/* Product image wrapper */
+.item-img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  object-fit: cover;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  cursor: zoom-in;
+}
+
+/* Zoom effect on hover */
+.item:hover .item-img {
+  transform: scale(1.12); /* zoom in */
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.25);
+}
+
+/* Product name */
+.item-name {
+  font-size: 16px;
+  font-weight: 500;
+  margin: 12px 0 8px;
+  text-align: center;
+  color: #2c2c2c;
+}
+
+/* Prices */
+.item-prices {
+  display: flex;
+  gap: 12px;
+  align-items: baseline;
+}
+
+.item-price-new {
+  font-size: 18px;
+  font-weight: 600;
+  color: #9d4edd; /* highlight color */
+}
+
+.item-price-old {
+  font-size: 16px;
+  color: #777;
+  text-decoration: line-through;
+}
+
+/* ---------------- RESPONSIVE ---------------- */
+
+/* XL screens (≥1280px) */
+@media (min-width: 1280px) {
+  .item {
+    max-width: 320px;
+  }
+  .item-name {
+    font-size: 18px;
+  }
+  .item-price-new {
+    font-size: 20px;
+  }
+}
+
+/* L screens (≥1024px) */
+@media (max-width: 1279px) {
+  .item {
+    max-width: 280px;
+  }
+}
+
+/* M screens (≥768px) */
+@media (max-width: 1023px) {
+  .item {
+    max-width: 240px;
+  }
+  .item-name {
+    font-size: 15px;
+  }
+}
+
+/* S screens (≤480px) */
+@media (max-width: 480px) {
+  .item {
+    max-width: 100%;
+    margin: 12px 0;
+  }
+  .item-name {
+    font-size: 14px;
+  }
+  .item-prices {
+    gap: 8px;
+  }
+  .item-price-new {
+    font-size: 16px;
+  }
+}
+

@@ -1,0 +1,178 @@
+/* ---------- NEWSLETTER ---------- */
+.newsletter {
+  width: 80%;
+  max-width: 1100px;
+  margin: 100px auto;
+  padding: 60px 40px;
+  border-radius: 10px;
+  background: #292424;
+  backdrop-filter: blur(12px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 18px;
+    font-family: 'Abril Fatface';
+}
+
+/* ---------- TITLE ---------- */
+.newsletter h1 {
+  font-size: clamp(28px, 4vw, 42px);
+  font-weight: 100;
+ color : #A8B84A;
+}
+
+/* ---------- SUBTEXT ---------- */
+.newsletter p {
+  color: #d6b151;
+;
+  font-size: 17px;
+  max-width: 480px;
+  line-height: 1.6;
+  font-family: 'Quicksand';
+  margin-bottom: 20px;
+}
+
+/* ---------- INPUT ---------- */
+.newsletter input {
+  flex: 1;
+  border: 3px solid #A8B84A;
+
+  outline: none;
+  padding: 16px 22px;
+  font-size: 16px;
+  border-radius: 50px;
+  background: rgb(255, 255, 255);
+  color: #222;
+  font-family: 'Inter';
+  margin-bottom: 5%;
+}
+
+.text{
+  width: 90%;
+  max-width: 90%;
+}
+
+/* Placeholder */
+.newsletter input::placeholder {
+  color: #888;
+  font-weight: 400;
+}
+
+/* Focus state = premium detail */
+.newsletter input:focus {
+  background: #A8B84A;
+  color: white;
+  border: none;
+  border: 3px solid #ffffff;
+}
+
+/* ---------- BUTTON ---------- */
+.subscribe{
+  font-family: 'Quicksand'!important;
+  width: 70%;
+  height: 52px;
+  border: none;
+  font-family: Inter;
+  border-radius: 50px;
+  background:  #A8B84A;
+  color: white;
+  font-size: 19px;
+  font-weight: 500;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.subscribe::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -120%;
+  width: 120%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255, 255, 255, 0.45),
+    transparent
+  );
+  transition: all 0.6s ease;
+}
+
+.subscribe:hover::before {
+  left: 120%;
+}
+
+.subscribe:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 30px rgba(157, 78, 221, 0.35);
+}
+
+.subscribe:active {
+  transform: scale(0.98);
+}
+
+.subscribe:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+}
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 768px) {
+  .newsletter {
+    padding: 50px 25px;
+  }
+
+  .subs button{
+    max-width: 60%;
+    font-size: medium;
+  }
+
+  .newsletter .input-wrapper {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .newsletter input {
+    text-align: center;
+  }
+
+  .newsletter button {
+    width: 100%;
+    padding: 14px 0;
+  }
+
+  .email-input{
+    width: 75%;
+    }
+
+    .subs .email-input{
+      padding: 10px;
+}
+}
+
+@media (max-width: 480px) {
+  .newsletter {
+    margin: 60px auto;
+    padding: 40px 20px;
+  }
+
+  .newsletter h1 {
+    font-size: clamp(24px, 6vw, 32px);
+  }
+
+  .newsletter p {
+    font-size: 15px;
+  }
+
+  .subs .subscribe{
+    min-width: 70%;
+  }
+
+  .subs .email-input{
+      width: 85%;
+      padding: 12px;
+}
+}

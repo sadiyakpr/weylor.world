@@ -1,0 +1,168 @@
+.add-product {
+  max-width: 720px;
+  background: #ffffff;
+  padding: 32px;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+  animation: fadeIn 0.4s ease;
+}
+
+.addproduct-title {
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 28px;
+  color: #222;
+}
+
+/* Field block */
+.addproduct-itemfield {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 20px;
+}
+
+.addproduct-itemfield p {
+  font-size: 14px;
+  font-weight: 500;
+  color: #444;
+}
+
+/* Inputs & Select */
+.addproduct-itemfield input,
+.add-product-selector {
+  height: 44px;
+  padding: 0 14px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  font-size: 14px;
+  transition: border 0.25s ease, box-shadow 0.25s ease;
+}
+
+.addproduct-itemfield input:focus,
+.add-product-selector:focus {
+  outline: none;
+  border-color: #4f46e5;
+  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.12);
+}
+
+/* Price row */
+.addproduct-price {
+  display: flex;
+  gap: 20px;
+}
+
+/* Upload box */
+.upload-box label {
+  border: 2px dashed #ddd;
+  border-radius: 14px;
+  padding: 24px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  transition: border 0.3s ease, background 0.3s ease;
+}
+
+.upload-box label:hover {
+  border-color: #4f46e5;
+  background: #f5f6ff;
+}
+
+.addproduct-thumbnail-img {
+  width: 64px;
+  opacity: 0.8;
+}
+
+/* Button */
+.addproduct-btn {
+  width: 100%;
+  height: 48px;
+  border: none;
+  border-radius: 12px;
+  background: #4f46e5;
+  color: #fff;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.25s ease, transform 0.2s ease;
+}
+
+.addproduct-btn:hover {
+  background: #4338ca;
+}
+
+.addproduct-btn:active {
+  transform: scale(0.97);
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ---------- BUTTON LOADING ---------- */
+.addproduct-btn:disabled {
+  background: #9fa4ff;
+  cursor: not-allowed;
+}
+
+/* ---------- TOAST ---------- */
+.toast {
+  padding: 12px 16px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  font-size: 14px;
+  font-weight: 500;
+  animation: slideDown 0.3s ease;
+}
+
+.toast.success {
+  background: #e8f7ee;
+  color: #1b7a3e;
+  border: 1px solid #b7e4c7;
+}
+
+.toast.error {
+  background: #fdecea;
+  color: #a61b1b;
+  border: 1px solid #f5c2c7;
+}
+
+/* Animation */
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ---------- RESPONSIVE ---------- */
+
+@media (max-width: 640px) {
+  .add-product {
+    padding: 24px 20px;
+  }
+
+  .addproduct-price {
+    flex-direction: column;
+  }
+}
+
+@media (min-width: 1024px) {
+  .add-product {
+    max-width: 800px;
+  }
+}

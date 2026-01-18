@@ -1,0 +1,162 @@
+/* SECTION */
+.profile {
+  width: 100%;
+  background: #ffffff;
+  padding: 100px 16px;
+  font-family: 'Quicksand';
+}
+
+/* CONTAINER */
+.profile-container {
+  max-width: 1000px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+  gap: 60px;
+  align-items: start;
+}
+
+/* LEFT AVATAR + BASIC INFO */
+.profile-info {
+  background: #A8B84A;;
+  padding: 36px;
+  border-radius: 16px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  animation: fadeSlideUp 0.8s ease forwards;
+}
+
+.profile-avatar {
+  width: 120px;
+  height: 120px;
+  margin-bottom: 5px;
+}
+
+.profile-info h2 {
+  font-size: 24px;
+  font-weight: 600;
+  color: #2c2c2c;
+  margin-bottom: 8px;
+}
+
+.profile-info p {
+  font-size: 16px;
+  color: #292424;
+  font-weight: 600;
+}
+
+/* RIGHT DETAILS */
+.profile-details {
+  background: #292424;
+  padding: 36px;
+  border-radius: 16px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
+  animation: fadeSlideUp 1s ease forwards;
+}
+
+.profile-details h3 {
+  font-size: 22px;
+  font-weight: 100;
+  margin-bottom: 20px;
+  color: #A8B84A;
+  font-family : 'Abril Fatface';
+}
+
+.profile-block {
+  margin-bottom: 24px;
+}
+
+.profile-block h4 {
+  font-size: 16px;
+  font-weight: 500;
+  margin-bottom: 6px;
+  color: #FAF7F6;
+}
+
+.profile-block p {
+  font-size: 15px;
+  line-height: 1.6;
+  color: #A8B84A;
+}
+
+/* SOCIAL ICONS */
+.profile-socials {
+  display: flex;
+  gap: 18px;
+  margin-top: 20px;
+}
+
+.profile-socials a {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: #FAF7F6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.profile-socials img {
+  width: 20px;
+  height: 20px;
+}
+
+.profile-socials a:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 25px rgba(157, 78, 221, 0.35);
+}
+
+/* ANIMATION */
+@keyframes fadeSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ---------------- RESPONSIVE ---------------- */
+
+/* L */
+@media (max-width: 1024px) {
+  .profile-container {
+    gap: 40px;
+  }
+}
+
+/* M (Tablet) */
+@media (max-width: 768px) {
+  .profile-container {
+    grid-template-columns: 1fr;
+  }
+
+  .profile-details {
+    margin-top: 30px;
+  }
+}
+
+/* S (Mobile) */
+@media (max-width: 480px) {
+  .profile {
+    padding: 70px 16px;
+  }
+
+  .profile-info h2 {
+    font-size: 20px;
+  }
+
+  .profile-details {
+    padding: 28px;
+  }
+}
+
+/* XL */
+@media (min-width: 1280px) {
+  .profile-info h2 {
+    font-size: 28px;
+  }
+}

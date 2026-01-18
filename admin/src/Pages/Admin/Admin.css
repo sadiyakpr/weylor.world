@@ -1,0 +1,65 @@
+/* Main Admin Layout */
+.admin {
+  display: flex;
+  min-height: 100vh;
+  background: #f6f7fb;
+}
+
+/* Right Content Area */
+.admin-content {
+  flex: 1;
+  padding: 32px;
+  overflow-y: auto;
+  transition: padding 0.3s ease;
+}
+
+/* Smooth page feel */
+.admin-content > * {
+  animation: fadeSlide 0.35s ease;
+}
+
+/* Animation */
+@keyframes fadeSlide {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ---------- RESPONSIVE ---------- */
+
+/* 🔹 Small screens (phones) */
+@media (max-width: 640px) {
+  .admin {
+    flex-direction: row;
+  }
+
+  .admin-content {
+    padding: 20px 16px;
+  }
+}
+
+/* 🔹 Medium screens (tablets) */
+@media (min-width: 641px) and (max-width: 768px) {
+  .admin-content {
+    padding: 24px;
+  }
+}
+
+/* 🔹 Large screens (laptops) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .admin-content {
+    padding: 28px;
+  }
+}
+
+/* 🔹 Extra large screens */
+@media (min-width: 1025px) {
+  .admin-content {
+    padding: 40px;
+  }
+}

@@ -1,0 +1,69 @@
+/* =========================
+   WEYLOR Design Tokens
+   ========================= */
+
+:root {
+  /* Brand Colors */
+  --color-primary: #faf9f6;     /* deep forest green */
+  --color-secondary: #292424;  /* soft neutral */
+    --color-accent: #c8a95f; 
+  --color-accent2: #A8B84A;      /* warm gold accent */
+
+  /* Text Colors */
+  --text-primary: #1a1a1a;
+  --text-secondary: #ffffff;
+  --text-muted: #6b6b6b;
+
+  /* Backgrounds */
+  --bg-primary: #ffffff;
+  --bg-soft: #1e3d2f;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  overflow-x: hidden;
+}
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #C6B08A;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

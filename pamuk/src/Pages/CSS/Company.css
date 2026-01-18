@@ -1,0 +1,103 @@
+/* CONTAINER */
+.company {
+  max-width: 1100px;
+  margin: 20px auto;
+  font-family: "Quicksand";
+  color: #292424;
+  text-align: center;
+  padding-bottom: 60px;
+}
+
+/* HERO */
+.company-hero {
+  margin-bottom: 40px;
+}
+
+.company-hero h1 {
+  font-family: "Abril Fatface";
+  font-size: clamp(32px, 5vw, 48px);
+  font-weight: 100;
+  margin-bottom: 14px;
+}
+
+.company-hero p {
+  max-width: 620px;
+  margin: 0 auto;
+  font-size: 16px;
+  line-height: 1.7;
+  opacity: 0.85;
+}
+
+/* FLEX CONTENT */
+.company-content {
+  display: flex;
+  justify-content: center;    /* center horizontally */
+  align-items: stretch;       /* equal height blocks */
+  flex-wrap: wrap;            /* wrap on smaller screens */
+  gap: 20px;
+}
+
+/* BLOCK (styled like testimonial-card) */
+.company-block {
+  flex: 1 1 280px;
+  max-width: 320px;
+  padding: 30px 30px;
+  border-radius: 18px;
+  background-color: #e6e0be; /* optional: match testimonials bg */
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  text-align: center;           /* keep text aligned inside */
+}
+
+.company-block:hover {
+  transform: translateY(-6px);
+}
+
+/* HEADINGS + TEXT */
+.company-block h2 {
+  font-size: 25px;
+  margin-bottom: 10px;
+  color: #292424;
+  font-weight: 100;
+  font-family: 'Abril Fatface';
+}
+
+.company-block p {
+  font-size: 15px;
+  line-height: 1.7;
+  opacity: 0.85;
+  color: #292424;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .company-content {
+    flex-direction: column;   /* stack vertically */
+    align-items: center;
+    gap: 24px;
+  }
+
+  .company-block {
+    max-width: 90%;           /* wider blocks on small screens */
+  }
+}
+
+
+.check-circle {
+  width: 70px;               /* consistent size */
+  height: 70px;
+  object-fit: contain;        /* keep aspect ratio */
+  display: inline-block;
+  vertical-align: middle;     /* align nicely with text */
+  margin-right: 8px;          /* spacing if used before text */
+  transition: transform 0.25s ease;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 10px;
+}
+
+.check-circle:hover {
+  transform: scale(1.1);      /* gentle hover effect */
+}

@@ -1,0 +1,162 @@
+/* SECTION */
+.contact {
+  width: 100%;
+  background: #ffffff;
+  padding: 100px 16px;
+  font-family: 'Quicksand';
+}
+
+/* CONTAINER */
+.contact-container {
+  max-width: 1200px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 80px;
+  align-items: start;
+}
+
+/* LEFT INFO */
+.contact-info {
+  animation: fadeSlideUp 0.8s ease forwards;
+}
+
+.contact-info h1 {
+  font-size: 42px;
+  font-weight: 100;
+  color: #292424;
+  margin-bottom: 12px;
+  font-family: 'Abril Fatface';
+}
+
+.contact-tagline {
+  font-size: 18px;
+  color: #A8B84A;
+  margin-bottom: 36px;
+}
+
+.contact-block {
+  margin-bottom: 26px;
+}
+
+.contact-block h3 {
+  font-size: 18px;
+  font-weight: 500;
+  margin-bottom: 8px;
+  color:#292424;
+  font-weight: 500;
+}
+
+.contact-block p {
+  font-size: 16px;
+  line-height: 1.7;
+  color: #555;
+}
+
+/* RIGHT */
+.contact-right {
+  background: #292424;
+  padding: 36px;
+  border-radius: 16px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
+  animation: fadeSlideUp 1s ease forwards;
+}
+
+.contact-right h3 {
+  font-size: 22px;
+  font-weight: 100;
+  margin-bottom: 10px;
+  color: #A8B84A;
+  font-family: 'Abril Fatface';
+}
+
+.contact-subtext {
+  font-size: 15px;
+  color: #d6b151;
+  margin-bottom: 24px;
+}
+
+/* SOCIAL ICONS */
+.contact-socials {
+  display: flex;
+  gap: 18px;
+}
+
+.contact-socials a {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+      border: 3px solid #A8B84A;
+
+  background-color: #FAF7F6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-socials img {
+  width: 22px;
+  height: 22px;
+}
+
+.contact-socials a:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 25px rgba(207, 221, 78, 0.35);
+}
+
+
+
+/* ANIMATION */
+@keyframes fadeSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ---------------- RESPONSIVE ---------------- */
+
+/* L */
+@media (max-width: 1024px) {
+  .contact-container {
+    gap: 50px;
+  }
+}
+
+/* M (Tablet) */
+@media (max-width: 768px) {
+  .contact-container {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-right {
+    margin-top: 30px;
+  }
+}
+
+/* S (Mobile) */
+@media (max-width: 480px) {
+  .contact {
+    padding: 70px 30px;
+  }
+
+  .contact-info h1 {
+    font-size: 32px;
+  }
+
+  .contact-right {
+    padding: 28px;
+  }
+}
+
+/* XL */
+@media (min-width: 1280px) {
+  .contact-info h1 {
+    font-size: 48px;
+  }
+}

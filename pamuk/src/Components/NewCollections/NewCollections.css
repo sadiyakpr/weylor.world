@@ -1,0 +1,105 @@
+/* =========================
+   WEYLOR – New Collections
+   Cleaned, Semantic, Responsive
+   ========================= */
+
+/* CONTAINER */
+.new-collections {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding-left: 40px;
+  padding-right: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  font-family: 'Quicksand', sans-serif;
+  padding-top: 80px;
+}
+
+/* HEADER */
+.new-collections-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  text-align: center;
+}
+
+.new-collections-header h2 {
+  font-family: 'Abril Fatface', serif;
+  font-size: clamp(28px, 4vw, 45px);
+  font-weight: 100;
+  color: var(--heading-color, #292424);
+}
+
+.new-collections-subtitle {
+  max-width: 620px;
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--text-muted, #555);
+}
+
+/* GRID */
+.new-collections-item {
+  margin-top: 40px;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 32px;
+}
+
+/* ITEM HOVER */
+.new-collections-item > * {
+  transition: transform 0.28s ease, box-shadow 0.3s ease;
+}
+
+.new-collections-item > *:hover {
+  transform: translateY(-6px) scale(1.03);
+}
+
+/* STATES */
+.new-collections-loading,
+.new-collections-error,
+.new-collections-empty {
+  margin-top: 32px;
+  font-size: 16px;
+  color: var(--text-muted, #666);
+}
+
+/* =========================
+   RESPONSIVE
+   ========================= */
+
+/* TABLET */
+@media (max-width: 900px) {
+  .new-collections {
+    padding: 32px 40px;
+  }
+
+  .new-collections-item {
+    gap: 24px;
+  }
+}
+
+/* MOBILE */
+@media (max-width: 600px) {
+  .new-collections {
+    padding: 28px 16px;
+  }
+
+  .new-collections-item {
+    gap: 20px;
+  }
+
+  .new-collections-header h2 {
+    font-size: 30px;
+  }
+
+  .new-collections-subtitle {
+    font-size: 15px;
+  }
+}

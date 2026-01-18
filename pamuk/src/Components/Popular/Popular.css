@@ -1,0 +1,69 @@
+/* CONTAINER */
+.popular {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  padding: 15px 80px 40px;
+  width: 100%;
+  max-width: 1400px;
+  font-family: 'Quicksand';
+  margin-top: 80px;
+}
+
+/* TITLE */
+.popular h1 {
+  font-family: 'Abril Fatface';
+  font-size: clamp(28px, 4vw, 45px);
+  font-weight: 100;
+  text-align: center;
+  color: #292424;
+}
+
+/* LINE */
+.popular hr {
+  width: clamp(120px, 25vw, 220px);
+  height: 5px;
+  border-radius: 10px;
+  background-color: #A8B84A;
+  border: none;
+  transform-origin: center;
+}
+
+/* FLEX LAYOUT */
+.popular-item {
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;   /* center items horizontally */
+  align-items: flex-start;   /* align cards at the top */
+  flex-wrap: wrap;           /* wrap neatly on smaller screens */
+  gap: 32px;                 /* spacing between cards */
+  width: 100%;
+}
+
+/* ITEM CARD ANIMATION */
+.popular-item > * {
+  transition: transform 0.28s ease, box-shadow 0.3s ease;
+}
+
+.popular-item > *:hover {
+  transform: scale(1.05);
+}
+
+/* RESPONSIVE SPACING */
+/* Tablets */
+@media (max-width: 900px) {
+  .popular-item {
+    gap: 24px;
+    padding-inline: 24px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .popular-item {
+    gap: 20px;
+    padding-inline: 16px;
+    justify-content: center; /* keep items centered even when stacked */
+  }
+}

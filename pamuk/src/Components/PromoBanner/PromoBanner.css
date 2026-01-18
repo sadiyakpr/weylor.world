@@ -1,0 +1,223 @@
+/* ===============================
+   PROMO BANNER — DARK EDITORIAL
+================================ */
+
+.promo-banner {
+  width: 80%;
+  height: 270px;
+  margin: 30px auto;
+  background:
+    radial-gradient(900px 220px at -10% -40%, rgba(255, 120, 80, 0.18), transparent 60%),
+    linear-gradient(135deg, #0e0e0e, #151515);
+  border-radius: 3px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 34px 42px;
+  overflow: hidden;
+  position: relative;
+
+  opacity: 0;
+  transform: translateY(40px);
+  transition:
+    opacity 0.9s ease,
+    transform 0.9s cubic-bezier(.16,.84,.44,1);
+}
+
+.promo-banner.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ===============================
+   FILM GRAIN OVERLAY
+================================ */
+
+.promo-banner::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.045'/%3E%3C/svg%3E");
+  pointer-events: none;
+  border-radius: inherit;
+  mix-blend-mode: overlay;
+  z-index: 1;
+}
+
+/* ===============================
+   CONTENT
+================================ */
+
+.promo-content {
+  position: relative;
+  z-index: 3;
+}
+
+.promo-content h2 {
+  font-family: "Abril Fatface", serif;
+  font-size: 44px;
+  font-weight: 400;
+  letter-spacing: 1.2px;
+  color: #ff500b;
+  margin-bottom: 8px;
+}
+
+.promo-content p {
+  font-size: 15px;
+  color: #fff;
+  margin-bottom: 18px;
+}
+
+/* ===============================
+   CTA BUTTON
+================================ */
+
+.promo-content button {
+  background: linear-gradient(135deg, #ff6a2b, #ff9f6b);
+  color: #fff;
+  border: none;
+  font-family: 'Quicksand';
+  padding: 13px 34px;
+  border-radius: 32px;
+  font-size: 14.5px;
+  font-weight: 500;
+  cursor: pointer;
+
+  box-shadow:
+    0 14px 30px rgba(255, 106, 43, 0.45),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3);
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.promo-content button:hover {
+  transform: translateY(-2px);
+  box-shadow:
+    0 22px 45px rgba(255, 106, 43, 0.6),
+    inset 0 1px 0 rgba(255, 255, 255, 0.35);
+}
+
+/* ===============================
+   IMAGE (SMOOTH ZOOM — FIXED)
+================================ */
+
+.promo-image {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.promo-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+
+  transform: scale(1);
+  transition: transform 1.2s cubic-bezier(.22,.61,.36,1),
+              filter 0.8s ease;
+  will-change: transform;
+}
+
+/* ✅ SMOOTH HOVER ZOOM */
+.promo-banner:hover .promo-image img {
+  transform: scale(1.12);
+  filter: brightness(0.95);
+}
+
+/* ===============================
+   FLIP TIMER
+================================ */
+
+.flip-timer {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 20px;
+  perspective: 1000px;
+}
+
+.flip-card {
+  width: 44px;
+  height: 58px;
+  position: relative;
+}
+
+.flip-card-inner {
+  position: absolute;
+  inset: 0;
+  transform-style: preserve-3d;
+  animation: flip 0.6s ease-in-out;
+}
+
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  font-weight: 600;
+  color: #faf7f6;
+  background: linear-gradient(180deg, #1b1b1b, #0f0f0f);
+  border-radius: 10px;
+  backface-visibility: hidden;
+}
+
+.flip-card-back {
+  transform: rotateX(180deg);
+}
+
+@keyframes flip {
+  from { transform: rotateX(0); }
+  to { transform: rotateX(-180deg); }
+}
+
+/* ===============================
+   URGENCY MODE
+================================ */
+
+.promo-banner.urgent {
+  box-shadow:
+    0 0 60px rgb(215, 119, 119),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.05);
+}
+
+/* ===============================
+   IMAGE ONLY MODE
+================================ */
+
+.promo-banner.image-only {
+  padding: 0;
+  background: none;
+}
+
+/* ===============================
+   RESPONSIVE
+================================ */
+
+@media (max-width: 768px) {
+  .promo-banner {
+    width: 95%;
+    height: 200px;
+    padding: 24px;
+  }
+
+  .promo-content h2 {
+    font-size: 32px;
+  }
+}
+
+@media (max-width: 480px) {
+  .promo-banner {
+    height: 170px;
+    padding: 18px;
+  }
+
+  .promo-content h2 {
+    font-size: 26px;
+  }
+}
