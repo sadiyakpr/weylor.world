@@ -5,7 +5,7 @@
   text-align: center;
   font-family: "Quicksand";
   color: #292424;
-  background-color: #e6e0be;
+  background-color: var(--color-secondary);
   margin-top: 80px;
 }
 
@@ -22,14 +22,14 @@
   font-family: 'Abril Fatface', serif;
   font-size: clamp(28px, 4vw, 45px);
   font-weight: 100;
-  color: var(--heading-color, #292424);
+  color: var(--color-primary);
 }
 
 .testimonials-subtitle {
   max-width: 620px;
   font-size: 16px;
   line-height: 1.6;
-  color: var(--text-muted, #555);
+  color: #d6d6d6;
 }
 
 /* GRID */
@@ -99,7 +99,7 @@
   font-style: normal;
   font-size: 14px;
   font-weight: 600;
-  color: #A8B84A;
+  color: var(--color-accent2);
 }
 
 /* ---------------- RESPONSIVE ---------------- */

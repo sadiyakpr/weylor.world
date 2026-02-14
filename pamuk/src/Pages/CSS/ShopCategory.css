@@ -127,7 +127,7 @@
   font-size: 18px;
   font-weight: 500;
   border: none;
-  background-color: #A8B84A;
+  background-color: var(--color-accent2);
   color: #FAF7F6;
   font-family: 'Quicksand';
   cursor: pointer;
@@ -220,7 +220,7 @@
   padding: 8px 22px;
   font-family: 'Quicksand';
   border-radius: 20px;
-  border: 2px solid #A8B84A;
+  border: 2px solid var(--color-accent2);
   background-color: #FAF7F6;
   color: #292424;
   font-size: 14px;

@@ -19,7 +19,7 @@
 }
 
 .toast.success {
-  background:  #d6b151;
+  background:  var(--color-accent2);
   color: #ffffff;
 }
 

@@ -25,7 +25,7 @@
   width: clamp(120px, 25vw, 220px);
   height: 5px;
   border-radius: 10px;
-  background-color: #A8B84A;
+  background-color: var(--color-accent2);
   border: none;
   transform-origin: center;
 }

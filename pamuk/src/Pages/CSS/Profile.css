@@ -58,7 +58,7 @@
   font-size: 22px;
   font-weight: 100;
   margin-bottom: 20px;
-  color: #A8B84A;
+  color: var(--color-accent2);
   font-family : 'Abril Fatface';
 }
 
@@ -76,7 +76,7 @@
 .profile-block p {
   font-size: 15px;
   line-height: 1.6;
-  color: #A8B84A;
+  color: var(--color-accent2);
 }
 
 /* SOCIAL ICONS */

@@ -70,7 +70,7 @@
 }
 
 .loginsignup-fields input:focus {
-  border-color: #c77dff;
+  border-color: var(--color-accent2);
   box-shadow: 0 0 0 3px rgba(199, 125, 255, 0.18);
 }
 
@@ -89,7 +89,7 @@
   font-weight: 500;
   font-family: 'Quicksand';
 
-  background-color: #A8B84A;
+  background-color: var(--color-accent2);
   color: #FAF7F6;
 
   cursor: pointer;
@@ -119,14 +119,14 @@
 }
 
 .loginsignup-login span {
-  color: #9d4edd;
+  color: var(--color-accent2);
   font-weight: 500;
   cursor: pointer;
   transition: color 0.2s ease;
 }
 
 .loginsignup-login span:hover {
-  color: #7b2cbf;
+  color: var(--color-accent2);
 }
 
 /* AGREEMENT */
@@ -141,7 +141,7 @@
 
 .loginsignup-agree input {
   margin-top: 3px;
-  accent-color: #9d4edd;
+  accent-color: var(--color-accent2);
 }
 
 /* Error message styling */

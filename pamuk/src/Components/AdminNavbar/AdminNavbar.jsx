@@ -1,7 +1,7 @@
 import React from 'react'
-import './Navbar.css'
+import './AdminNavbar.css'
 
-const Navbar = () => {
+const AdminNavbar = () => {
   return (
     <div className = 'navbar'>
       <h1>WEYLOR</h1>
@@ -9,4 +9,4 @@ const Navbar = () => {
   )
 }
 
-export default Navbar
+export default AdminNavbar

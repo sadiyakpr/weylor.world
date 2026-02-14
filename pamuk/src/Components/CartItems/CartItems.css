@@ -103,7 +103,7 @@
 }
 
 .cartitems-promocode p {
-  color: #C6B08A;
+  color: var(--color-accent2);
 }
 
 /* Promo Box */

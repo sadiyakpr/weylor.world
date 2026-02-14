@@ -23,7 +23,7 @@
   font-family: 'Abril Fatface';
   font-size: 50px;
   letter-spacing: 2px;
-  color:  #FAF7F6;
+  color:  var(--color-primary);
   cursor: pointer;
   font-weight: 300;
 }
@@ -43,7 +43,7 @@
   font-family: 'Quicksand';
   font-size: 15px;
   cursor: pointer;
-  color: #d6b151;
+  color: var(--color-primary);
   position: relative;
   transition: color 0.3s ease;
 }
@@ -56,12 +56,12 @@
   bottom: -6px;
   width: 0;
   height: 2px;
-  background: #9d4edd;
+  background: var(--color-accent2);
   transition: width 0.3s ease;
 }
 
 .footer-links li:hover {
-  color:  #9d4edd;
+  color:  var(--color-accent2);
 }
 
 .footer-links li:hover::after {
@@ -78,11 +78,11 @@
 .footer-icons-container {
   width: 46px;
   height: 46px;
-background-color: #FAF7F6;
+  background-color: var(--color-primary);
 
 border-radius: 50%;
   display: flex;
-    border: 3px solid #A8B84A;
+  border: 3px solid var(--color-accent2);
   align-items: center;
   justify-content: center;
   cursor: pointer;
@@ -95,7 +95,7 @@ border-radius: 50%;
 
 .footer-icons-container:hover {
   transform: translateY(-6px);
-  box-shadow: 0 12px 25px rgba(207, 221, 78, 0.35);
+  box-shadow: 0 12px 25px rgba(56, 169, 177, 0.35);
 }
 
 /* COPYRIGHT */

@@ -126,7 +126,7 @@
   font-weight: 500;
   padding: 8px 22px;
   font-family: 'Quicksand';
-  background-color: #A8B84A;
+  background-color: var(--color-accent2);
   color: #FAF7F6;
   font-family: 'Quicksand' !important;
   height: 52px;

@@ -8,8 +8,8 @@ import About from "./Pages/About";
 import Contact from "./Pages/Contact";
 import Product from "./Pages/Product";
 import Cart from "./Pages/Cart";
-import LoginSignup from "./Pages/LoginSignup";
-import ScrollToTop from "./Pages/ScrollToTop";
+import LoginSignup from "./Pages/LoginSignup"; // 👈 fixed path
+import ScrollToTop from "./Pages/ScrollToTop"; // 👈 should be in Components
 import Footer from "./Components/Footer/Footer";
 
 import men_banner from "./Assets/banner_mens.png";
@@ -19,12 +19,12 @@ import Breadcrums from "./Components/Breadcrums/Breadcrums";
 import Profile from "./Pages/Profile";
 import Company from "./Pages/Company";
 import Testimonials from "./Components/Testimonials/Testimonials";
-import Checkout from "./Pages/Checkout";
+import Checkout from "./Components/Checkout/Checkout";
 
-import { Elements } from "@stripe/react-stripe-js";
-import { loadStripe } from "@stripe/stripe-js";
+import Pamuk from "./Pages/Pamuk"; 
+import Admin from "./Pages/Admin"; 
+import ProtectedRoute from "./Components/ProtectedRoute/ProtectedRoute"; // 👈 fixed path
 
-const stripePromise = loadStripe("pk_test_xxx");
 
 function App() {
   return (
@@ -33,6 +33,20 @@ function App() {
       <ScrollToTop />
 
       <Routes>
+        {/* Pamuk main route */}
+        <Route path="/pamuk" element={<Pamuk />} />
+
+        {/* Admin nested inside Pamuk */}
+        <Route
+          path="/pamuk/admin/*"
+          element={
+            <ProtectedRoute adminOnly={true}>
+              <Admin />
+            </ProtectedRoute>
+          }
+        />
+
+        {/* Public routes */}
         <Route path="/" element={<Shop />} />
         <Route path="/men" element={<ShopCategory banner={men_banner} category="men" />} />
         <Route path="/women" element={<ShopCategory banner={women_banner} category="women" />} />
@@ -45,16 +59,7 @@ function App() {
         <Route path="/profile" element={<Profile />} />
         <Route path="/company" element={<Company />} />
         <Route path="/testimonials" element={<Testimonials />} />
-
-        {/* ✅ Stripe Checkout Route */}
-        <Route
-          path="/checkout"
-          element={
-            <Elements stripe={stripePromise}>
-              <Checkout />
-            </Elements>
-          }
-        />
+        <Route path="/checkout" element={<Checkout />} />
       </Routes>
 
       <Footer />

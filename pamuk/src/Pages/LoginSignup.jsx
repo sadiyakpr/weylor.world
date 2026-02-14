@@ -66,8 +66,12 @@ const LoginSignup = () => {
     const data = await response.json()
 
     if (data.success) {
-      localStorage.setItem('auth-token', data.token)
-      window.location.replace('/')
+      localStorage.setItem('auth-token', data.token) 
+      if (data.role) 
+        {
+          localStorage.setItem('role', data.role) // ✅ store role + 
+          }
+          window.location.replace('/')
     } else {
       setError(data.errors || 'Login failed')
     }
@@ -90,8 +94,12 @@ const LoginSignup = () => {
     const data = await response.json()
 
     if (data.success) {
-      localStorage.setItem('auth-token', data.token)
-      window.location.replace('/')
+     localStorage.setItem('auth-token', data.token) 
+     if (data.role) 
+      {
+        localStorage.setItem('role', data.role) // ✅ store role
+     }
+     window.location.replace('/')
     } else {
       setError(data.errors || 'Signup failed')
     }

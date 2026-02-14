@@ -50,20 +50,27 @@ mongoose
  * AUTH MIDDLEWARE
  ***********************/
 const auth = (req, res, next) => {
-  const authHeader = req.header("Authorization");
-  if (!authHeader) {
-    return res.status(401).json({ success: false, message: "No token provided" });
-  }
-
-  const token = authHeader.replace("Bearer ", "");
   try {
+    const token = req.header("Authorization")?.replace("Bearer ", "");
+    if (!token) {
+      return res.status(401).json({ success: false, message: "No token provided" });
+    }
+
+    // 👇 decode token
     const decoded = jwt.verify(token, process.env.JWT_SECRET);
+
+    // attach to request
     req.userId = decoded.userId;
+    req.role = decoded.role; // 👈 role is now available
+
     next();
   } catch (err) {
-    return res.status(401).json({ success: false, message: "Invalid or expired token" });
+    console.error("Auth error:", err);
+    res.status(401).json({ success: false, message: "Invalid token" });
   }
 };
+
+module.exports = auth;
 
 /***********************
  * UPLOAD CONFIG
@@ -112,6 +119,7 @@ const User = mongoose.model(
     addresses: { type: Array, default: [] },
     orders: { type: Array, default: [] },
     createdAt: { type: Date, default: Date.now },
+    role: { type: String, default: "user" } // 👈 NEW field
   })
 );
 
@@ -166,33 +174,45 @@ app.get("/popularinwomen", async (_, res) => {
   res.json({ success: true, data });
 });
 
-/* AUTH */
+
+// SIGNUP//
 app.post("/signup", async (req, res) => {
   try {
     const { username, email, password } = req.body;
+
     if (!username || !email || !password) {
-      return res.status(400).json({ success: false, message: "Missing fields" });
+      return res.status(400).json({ success: false, message: "All fields are required" });
     }
 
     if (await User.findOne({ email })) {
-      return res.status(409).json({ success: false, message: "Email already exists" });
+      return res.status(409).json({ success: false, message: "Email already registered" });
     }
 
-    const hashed = await bcrypt.hash(password, 10);
+    const hashedPassword = await bcrypt.hash(password, 10);
+
+    // 👇 Default role is "user", but you can set "admin" manually if needed
     const user = await User.create({
       name: username,
       email,
-      password: hashed,
+      password: hashedPassword,
+      role: "user"
     });
 
-    const token = jwt.sign({ userId: user._id }, process.env.JWT_SECRET, {
-      expiresIn: "7d",
-    });
+    const token = jwt.sign(
+      { userId: user._id, role: user.role },
+      process.env.JWT_SECRET,
+      { expiresIn: "7d" }
+    );
 
-    res.json({ success: true, token });
+    return res.json({
+      success: true,
+      token,
+      role: user.role, // 👈 frontend will now store this
+      message: "Signup successful"
+    });
   } catch (err) {
     console.error("Signup error:", err);
-    res.status(500).json({ success: false, message: "Server error" });
+    return res.status(500).json({ success: false, message: "Internal server error" });
   }
 });
 
@@ -214,11 +234,15 @@ app.post("/login", async (req, res) => {
       return res.status(401).json({ success: false, message: "Invalid email or password" });
     }
 
-    const token = jwt.sign({ userId: user._id }, process.env.JWT_SECRET, {
-      expiresIn: "7d",
-    });
+    // 👇 include role in the JWT payload
+    const token = jwt.sign(
+      { userId: user._id, role: user.role },
+      process.env.JWT_SECRET,
+      { expiresIn: "7d" }
+    );
 
-    res.json({ success: true, token });
+    // 👇 send role back in response
+    res.json({ success: true, token, role: user.role });
   } catch (err) {
     console.error("Login error:", err);
     res.status(500).json({ success: false, message: "Server error" });
@@ -232,8 +256,11 @@ app.get("/me", auth, async (req, res) => {
     if (!user) {
       return res.status(404).json({ success: false, message: "User not found" });
     }
+
+    // 👇 role will be included automatically if it's in your schema
     res.json({ success: true, user });
   } catch (err) {
+    console.error("Me route error:", err);
     res.status(500).json({ success: false, message: "Server error" });
   }
 });
@@ -257,6 +284,14 @@ app.post("/addtocart", auth, async (req, res) => {
     res.status(500).json({ success: false, error: err.message });
   }
 });
+
+/*********************** * ADMIN DASHBOARD ***********************/ 
+app.get("/admin/dashboard", auth, (req, res) => { 
+  if (req.role !== "admin") { 
+    return res.status(403).json({ success: false, message: "Access denied" }); 
+  } 
+    res.json({ success: true, message: "Welcome to the admin dashboard!" }); }); 
+    app.listen(4000, () => console.log("Server running on http://localhost:4000"));
 
 /* NEWSLETTER */
 app.use("/api", require("./routes/newsletter"));

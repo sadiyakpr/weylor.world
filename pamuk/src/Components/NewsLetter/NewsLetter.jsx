@@ -65,7 +65,6 @@ if (!isValidEmail) {
             placeholder="Your Email"
             onChange={(e) => setEmail(e.target.value)}
           />
-          <br/>
           <button className = 'subscribe' onClick={handleSubscribe}>
             {loading ? "Subscribing..." : "Subscribe"}
           </button>

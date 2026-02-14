@@ -1,6 +1,7 @@
-import React from 'react'
+import React, { useState } from "react";
 import './Hero2.css'
 import aboutImage from '../../Assets/exclusive_image.png'
+import GenderSelector from "../GenderSelector/GenderSelector";
 
 /**
  * SEO-Optimized About / Hero Section for WEYLOR
@@ -8,6 +9,8 @@ import aboutImage from '../../Assets/exclusive_image.png'
  */
 
 const Hero2 = () => {
+  const [genderOpen, setGenderOpen] = useState(false);
+
   return (
     <section
       className="about"
@@ -26,21 +29,43 @@ const Hero2 = () => {
             WEYLOR – Premium Sustainable Fashion Brand
           </h1>
 
-          {/* Keyword-rich tagline */}
+          {/* Primary CTA */}
+          <button
+            className="hero-btn"
+            aria-label="Explore WEYLOR sustainable fashion collections"
+            onClick={() => setGenderOpen(true)}
+          >
+            Explore Sustainable Collections
+          </button>
+
+          {/* Modal / Selector */}
+          {genderOpen && (
+            <GenderSelector onClose={() => setGenderOpen(false)} />
+          )}
+
+          {/* Keyword-rich tagline
           <p className="about-tagline">
             Where softness meets responsibility in conscious, sustainable clothing.
-          </p>
+          </p> */}
 
           {/* Descriptive paragraphs with natural keyword placement */}
-          <p className='description'>
+          {/* <p className='description'>
             kindness, and simplicity. Our conscious clothing is designed to feel gentle
-            on your skin while reducing impact on the planet.
+            on your skin while reducing impact on the earth.
             <br/>
             Every WEYLOR piece is created with intention, focusing on comfort,
             durability, and timeless design. We choose responsible materials and
             thoughtful production methods so you can wear fashion that lasts and
             matters.
-          </p>
+          </p> */}
+
+          {/* Supporting description with natural keywords */}
+        <p className="hero-desc">
+          Discover WEYLOR’s premium sustainable clothing crafted from soft,
+          eco-conscious fabrics. Designed for comfort, durability, and timeless
+          style — fashion that respects both you and the earth.
+        </p>
+
         </header>
 
         {/* IMAGE CONTENT */}

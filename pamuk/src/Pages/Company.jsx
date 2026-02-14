@@ -31,14 +31,14 @@ const Company = () => {
               <p>
                 Fashion should feel good and do good. We believe in slowing
                 down, making better choices, and building a brand that respects
-                people and the planet.
+                people and the earth.
               </p>
             </div>
 
             <div className="company-block">
               <img className = 'check-circle' src = {check_circle2} />
               <h2>Our Vision</h2>
-              <p>Revolutionizing Fashion — for the planet.</p>
+              <p>Revolutionizing Fashion — for the earth+.</p>
             </div>
           </div>
         </>
@@ -62,7 +62,7 @@ const Company = () => {
               <p>
                 Fashion should feel good and do good. We believe in slowing
                 down, making better choices, and building a brand that respects
-                people and the planet.
+                people and the earth.
               </p>
             </div>
 
@@ -71,7 +71,7 @@ const Company = () => {
                           <img className = 'check-circle' src = {check_circle2} />
 
             <h2>Our Vision</h2>
-            <p>Revolutionizing Fashion — for the planet.</p>
+            <p>Revolutionizing Fashion — for the earth.</p>
           </div>
         </div>
       )}

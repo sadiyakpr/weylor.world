@@ -19,12 +19,12 @@
 .newsletter h1 {
   font-size: clamp(28px, 4vw, 42px);
   font-weight: 100;
- color : #A8B84A;
+ color : var(--color-primary);
 }
 
 /* ---------- SUBTEXT ---------- */
 .newsletter p {
-  color: #d6b151;
+  color: #d6d6d6;
 ;
   font-size: 17px;
   max-width: 480px;
@@ -36,8 +36,7 @@
 /* ---------- INPUT ---------- */
 .newsletter input {
   flex: 1;
-  border: 3px solid #A8B84A;
-
+  border: 3px solid var(--color-primary);
   outline: none;
   padding: 16px 22px;
   font-size: 16px;
@@ -61,10 +60,10 @@
 
 /* Focus state = premium detail */
 .newsletter input:focus {
-  background: #A8B84A;
+  background: var(--color-primary);
   color: white;
   border: none;
-  border: 3px solid #ffffff;
+  border: 3px solid var(--color-accent2);
 }
 
 /* ---------- BUTTON ---------- */
@@ -75,7 +74,7 @@
   border: none;
   font-family: Inter;
   border-radius: 50px;
-  background:  #A8B84A;
+  background: var(--color-accent2);
   color: white;
   font-size: 19px;
   font-weight: 500;

@@ -1,8 +1,8 @@
 import React from 'react'
-import Navbar from './Components/Navbar/Navbar'
+import Navbar from './AdminNavbar/AdminNavbar'
 import Admin from './Pages/Admin/Admin'
 
-const App = () => {
+const AdminApp = () => {
   return (
     <div>
       <Navbar/>
@@ -11,5 +11,5 @@ const App = () => {
   )
 }
 
-export default App
+export default AdminApp
 
